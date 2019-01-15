@@ -3,96 +3,71 @@
 <head>
   <title>WEB - Welcome</title>
   <meta charset="utf-8">
-  <style>
-    body{
-      margin: 5;
-    }
-    a {
-      color:black;
-      text-decoration: none;
-    }
-    h1 {
-      font-size: 50px;
-      text-align: center;
-      border-bottom: 1px solid gray;
-      margin: 0;
-      padding: 10px;
-    }
-    #article h2{
-      margin: 0;
-      padding-top: 10px;
-    }
-    #grid ol {
-      font-size: 25px;
-      border-right: 1px solid gray;
-      width: 150px;
-      margin: 0;
-      padding: 30px;
-      padding-right: 15px;
-    }
-    #grid{
-      display: grid;
-      grid-template-columns: 205px 1fr;
-    }
-    #article{
-      padding-left: 10px;
-    }
-    @media (max-width:1000px){
-      #grid{
-        display: block;
-      }
-      #article{
-        padding-left: 0;
-        padding: 10px;
-      }
-      #grid ol {
-        border-right: none;
-        width: auto;
-        font-size: 20px;
-        border-bottom: 1px solid gray;
-        padding-left: 60px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="Style.css">
+  <link rel="stylesheet" type="text/css" href="semantic\semantic.css">
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="semantic\semantic.js"></script>
 </head>
 
 <body>
-  <h1><a href="index.html" style="color:red;text-decoration:underline">WEB</a></h1>
-  <div id="grid">
-    <ol>
-      <li><a href="HTML.html">HTML</a></li>
-      <li><a href="CSS.html">CSS</a></li>
-      <li><a href="JavaScript.html">JavaScript</a></li>
-    </ol>
-    <div id="article">
-      <h2>WEB</h2>
-      <p>월드 와이드 웹(World Wide Web, WWW, W3)은 인터넷에 연결된 컴퓨터들을 통해 사람들이 정보를 공유할 수 있는 전 세계적인
-        정보 공간을 말한다. 간단히 웹(Web)이라 부르는 경우가 많다. 이 용어는 인터넷과 동의어로 쓰이는 경우가 많으나 엄격히 말해 서로 다른 개념이다.
-        웹은 전자 메일과 같이 인터넷 상에서 동작하는 하나의 서비스일 뿐이다. 그러나 1993년 이래로 웹은 인터넷 구조의 절대적 위치를 차지하고 있다.</p>
-      <p>인터넷에서 HTTP 프로토콜, 하이퍼텍스트, HTML형식 등을 사용하여 그림과 문자를 교환하는 전송방식을 말하기도 한다.</p>
+  <h1><a href="index.html" id="H1">잡학사전</a></h1>
+  <div class="ui menu">
+    <a class="item" href="index.html">
+        Home
+    </a>
+    <div class="ui pointing dropdown link item">
+      <span class="text">Web의 구성요소</span>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="header">Categories</div>
+          <a class="item" href="HTML.html">HTML</a>
+          <a class="item" href="CSS.html">CSS</a>
+          <a class="item" href="JavaScript.html">JavaScript</a>
+        </div>
+      </div>
+      <a class="item">
+        Forums
+      </a>
+      <a class="item">
+        Contact Us
+      </a>
     </div>
-  </div>
-  <p>
-    <div id="disqus_thread"></div>
     <script>
-
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://web-1-ikcumqqagj.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+      $('.ui.dropdown').dropdown();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </p>
+    <div class="ui container">
+        <div id="article">
+          <h2>WEB</h2>
+          <p>월드 와이드 웹(World Wide Web, WWW, W3)은 인터넷에 연결된 컴퓨터들을 통해 사람들이 정보를 공유할 수 있는 전 세계적인
+            정보 공간을 말한다. 간단히 웹(Web)이라 부르는 경우가 많다. 이 용어는 인터넷과 동의어로 쓰이는 경우가 많으나 엄격히 말해 서로 다른 개념이다.
+            웹은 전자 메일과 같이 인터넷 상에서 동작하는 하나의 서비스일 뿐이다. 그러나 1993년 이래로 웹은 인터넷 구조의 절대적 위치를 차지하고 있다.</p>
+          <p>인터넷에서 HTTP 프로토콜, 하이퍼텍스트, HTML형식 등을 사용하여 그림과 문자를 교환하는 전송방식을 말하기도 한다.</p>
+        </div>
+      <p>
+        <div id="disqus_thread"></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://web-1-ikcumqqagj.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </p>
+    </div>
 </body>
 </html>
